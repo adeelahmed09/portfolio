@@ -28,7 +28,7 @@ function Hero() {
           <p className="text-[#F9C02F] tracking-widest">Full-stack Developer</p>
         </div>
         <div   className="mt-8 ">
-          <h1 className="reveal-item text-6xl font-extrabold text-[#D9D9D9] ">
+          <h1 className="reveal-item text-5xl font-extrabold text-[#D9D9D9] ">
             <span>Your Business</span>
             <br />
             <span>Deserves a</span>
@@ -74,7 +74,7 @@ function Hero() {
             alt="Adeel Ahmed"
             width={500}
             height={600}
-            className="w-auto max-h-[600px] object-contain object-bottom block brightness-[0.96] contrast-[1.04]"
+            className="w-auto max-h-[550px] object-contain object-bottom block brightness-[0.96] contrast-[1.04]"
           />
 
           {/* Fades */}

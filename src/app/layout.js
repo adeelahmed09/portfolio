@@ -1,8 +1,8 @@
-import { Playfair_Display, Space_Grotesk } from 'next/font/google';
+import { Playfair_Display, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import Nav from '@/sections/Nav';
-
-
+import Nav from "@/sections/Nav";
+import LoadingSuspense from "@/components/utils/LoadingSuspense";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,13 +10,13 @@ export const metadata = {
 };
 
 const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
+  subsets: ["latin"],
+  variable: "--font-playfair",
 });
 
 const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
 });
 
 export default function RootLayout({ children }) {
@@ -26,8 +26,10 @@ export default function RootLayout({ children }) {
       className={`${playfair.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full w-screen overflow-x-hidden flex flex-col bg-[#0a0a0a]">
-        <Nav/>
-        {children}
+        <Suspense fallback={<LoadingSuspense />}>
+          <Nav />
+          {children}
+        </Suspense>
       </body>
     </html>
   );
