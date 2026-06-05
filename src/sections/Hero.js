@@ -20,15 +20,15 @@ function Hero() {
   );
 }, { scope: containers });
   return (
-    <main ref={containers} className="flex w-full relative h-full ">
+    <main ref={containers} className="flex flex-col md:flex-row w-full relative h-full">
       <div class="absolute inset-0 z-0 pointer-events-none bg-[size:60px_60px] bg-[linear-gradient(rgba(249,192,47,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(249,192,47,0.02)_1px,transparent_1px)]"></div>
-      <div  className=" w-1/2 relative">
+      <div  className="w-full md:w-1/2 relative">
         <div  className="reveal-item flex justify-center will-change-transform will-change-opacity gap-3 uppercase text-xs w-fit items-center">
           <div className="w-8  h-[.5px] bg-[#F9C02F]"></div>
           <p className="text-[#F9C02F] tracking-widest">Full-stack Developer</p>
         </div>
         <div   className="mt-8 ">
-          <h1 className="reveal-item text-5xl font-extrabold text-[#D9D9D9] ">
+          <h1 className="reveal-item text-4xl md:text-5xl font-extrabold text-[#D9D9D9] ">
             <span>Your Business</span>
             <br />
             <span>Deserves a</span>
@@ -41,15 +41,15 @@ function Hero() {
             You're on the right spot
           </h3>
           <div className="reveal-item my-7 w-12 h-[.5] bg-[#D9D9D9]"></div>
-          <p className="reveal-item text-xm text-[#D9D9D9] w-[380px]">
+          <p className="reveal-item text-xm text-[#D9D9D9] w-full md:w-[380px]">
             I'm <span className=" font-bold  ">Adeel Ahmed</span> — I build
             fast, conversion-focused web experiences that help businesses find
             their clients online. Not templates. Real products.
           </p>
-          <div className="reveal-item flex items-center gap-7 mt-[48px] animate-[fadeUp_0.9s_0.85s_forwards]">
+          <div className="reveal-item flex flex-wrap items-center gap-7 mt-[48px] animate-[fadeUp_0.9s_0.85s_forwards]">
             <Link
               href="#"
-              className="inline-block bg-[#F9C02F] text-[#0A0A0A] font-sans text-[0.78rem] font-semibold tracking-[0.14em] uppercase px-9 py-4 no-underline border-none cursor-pointer transition-all hover:opacity-80"
+              className="inline-block bg-[#F9C02F] text-[#0A0A0A] font-sans text-[12px] font-semibold tracking-[0.14em] uppercase px-5 py-2 sm:px-9 sm:py-5 no-underline border-none cursor-pointer transition-all hover:opacity-80"
             >
               Let's Work Together
             </Link>
@@ -63,18 +63,18 @@ function Hero() {
         </div>
       </div>
 
-      <div className="w-1/2 max-w-full mx-auto relative flex items-center">
+      <div className="w-full md:w-1/2 max-w-full mx-auto relative flex items-center">
         {/* The Accent Line */}
-        <div className="absolute left-0 top-[20%] bottom-0 w-px z-[3] bg-gradient-to-b from-transparent via-[#f9c02f4d] to-transparent"></div>
-        <div className="absolute -bottom-[60px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_center,_rgba(249,192,47,0.12)_0%,_transparent_70%)] pointer-events-none z-[1]"></div>
+        <div className="hidden md:block absolute left-0 top-[20%] bottom-0 w-px z-[3] bg-gradient-to-b from-transparent via-[#f9c02f4d] to-transparent"></div>
+        <div className="hidden md:block absolute -bottom-[60px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_center,_rgba(249,192,47,0.12)_0%,_transparent_70%)] pointer-events-none z-[1]"></div>
         {/* Image Container */}
-        <div className="reveal-item relative z-[15] w-full h-full flex items-end justify-center ">
+        <div className="reveal-item relative z-[15] w-full h-full flex items-end md:items-end justify-center ">
           <Image
             src="/model/my-pic.png"
             alt="Adeel Ahmed"
             width={500}
             height={600}
-            className="w-auto max-h-[550px] object-contain object-bottom block brightness-[0.96] contrast-[1.04]"
+            className="w-auto max-h-[450px] md:max-h-[550px] object-contain md:object-bottom object-center block brightness-[0.96] contrast-[1.04]"
           />
 
           {/* Fades */}
