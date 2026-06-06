@@ -34,9 +34,11 @@ Google has the full resources of my portfolio. I am attaching screenshots of my 
   return (
     <div className="mt-20 p-6 bg-[#1a1a1a] rounded-lg border border-[#333] max-w-3xl mx-auto w-full">
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-[#F9C02F] font-semibold text-lg tracking-wide uppercase">AI Prompt</h3>
+        <h3 className="text-[#F9C02F] font-semibold text-lg tracking-wide uppercase">Portfolio Enhancement AI Prompt</h3>
         <button
           onClick={handleCopy}
+          aria-live="polite"
+          aria-label="Copy portfolio enhancement prompt to clipboard"
           className="bg-[#F9C02F] text-[#0A0A0A] px-4 py-2 text-sm font-bold uppercase tracking-wider rounded hover:opacity-80 transition-opacity"
         >
           {error ? "Failed to Copy" : copied ? "Copied!" : "Copy Prompt"}
