@@ -15,15 +15,15 @@ function Nav() {
         if (open) {
             gsap.killTweensOf(menuRef.current)
             gsap.to(menuRef.current, { x: 0, autoAlpha: 1, duration: 0.35, ease: 'power2.out' })
-            gsap.to(linesRef.current[0], { rotate: 45, y: 8, duration: 0.25, background: '#F9C02F' })
+            gsap.to(linesRef.current[0], { rotate: 45, y: 8, duration: 0.25, backgroundColor: '#F9C02F' })
             gsap.to(linesRef.current[1], { autoAlpha: 0, duration: 0.18 })
-            gsap.to(linesRef.current[2], { rotate: -45, y: -8, duration: 0.25, background: '#F9C02F' })
+            gsap.to(linesRef.current[2], { rotate: -45, y: -8, duration: 0.25, backgroundColor: '#F9C02F' })
         } else {
             gsap.killTweensOf(menuRef.current)
             gsap.to(menuRef.current, { x: 120, autoAlpha: 0, duration: 0.28, ease: 'power2.in' })
-            gsap.to(linesRef.current[0], { rotate: 0, y: 0, duration: 0.2, background: 'transparent' })
+            gsap.to(linesRef.current[0], { rotate: 0, y: 0, duration: 0.2, backgroundColor: '#D9D9D9' })
             gsap.to(linesRef.current[1], { autoAlpha: 1, duration: 0.15 })
-            gsap.to(linesRef.current[2], { rotate: 0, y: 0, duration: 0.2, background: 'transparent' })
+            gsap.to(linesRef.current[2], { rotate: 0, y: 0, duration: 0.2, backgroundColor: '#D9D9D9' })
         }
     }, [open])
 
@@ -38,18 +38,23 @@ function Nav() {
         </h1>
         <ul className='hidden md:flex gap-12 text-[#6B6B6B] items-center  font-extralight text-sm uppercase'>
             <li>
-                <Link href={"#"} className={buttonClasses}>
-                    Work
+                <Link href={"/"} className={buttonClasses}>
+                    Home
                 </Link>
             </li>
             <li>
-                <Link href={"#"} className={buttonClasses}>
+                <Link href={"/about"} className={buttonClasses}>
                     About 
                 </Link>
             </li>
             <li>
-                <Link href={"#"} className={buttonClasses}>
-                    Service
+                <Link href={"/projects"} className={buttonClasses}>
+                    Projects
+                </Link>
+            </li>
+            <li>
+                <Link href={"/contact"} className={buttonClasses}>
+                    Contact
                 </Link>
             </li>
             <li>
@@ -81,13 +86,16 @@ function Nav() {
         >
             <ul className='flex flex-col gap-4 text-[#D9D9D9] font-extralight text-sm uppercase'>
                 <li>
-                    <Link href="#" onClick={handleLinkClick} className='block'>Work</Link>
+                    <Link href="/" onClick={handleLinkClick} className='block'>Home</Link>
                 </li>
                 <li>
-                    <Link href="#" onClick={handleLinkClick} className='block'>About</Link>
+                    <Link href="/about" onClick={handleLinkClick} className='block'>About</Link>
                 </li>
                 <li>
-                    <Link href="#" onClick={handleLinkClick} className='block'>Service</Link>
+                    <Link href="/projects" onClick={handleLinkClick} className='block'>Projects</Link>
+                </li>
+                <li>
+                    <Link href="/contact" onClick={handleLinkClick} className='block'>Contact</Link>
                 </li>
                 <li>
                     <button onClick={() => { setOpen(false) }} className='w-full px-4 text-black py-2 uppercase bg-[#F9C02F]'>Hire Me</button>
