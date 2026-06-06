@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 export default function CopyablePrompt() {
   const [copied, setCopied] = useState(false);
+  const [error, setError] = useState(false);
 
   const promptText = `Please take a deep analysis of my portfolio project and create additional pages like "About Us", "Contact Us", "Projects", etc.
 
@@ -17,10 +18,17 @@ Please feature "ygocar.com" prominently as my main portfolio project and make it
 Additional Context:
 Google has the full resources of my portfolio. I am attaching screenshots of my current portfolio and ygocar.com for your reference.`;
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(promptText);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(promptText);
+      setCopied(true);
+      setError(false);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+      setError(true);
+      setTimeout(() => setError(false), 2000);
+    }
   };
 
   return (
@@ -31,7 +39,7 @@ Google has the full resources of my portfolio. I am attaching screenshots of my 
           onClick={handleCopy}
           className="bg-[#F9C02F] text-[#0A0A0A] px-4 py-2 text-sm font-bold uppercase tracking-wider rounded hover:opacity-80 transition-opacity"
         >
-          {copied ? "Copied!" : "Copy Prompt"}
+          {error ? "Failed to Copy" : copied ? "Copied!" : "Copy Prompt"}
         </button>
       </div>
       <pre className="text-[#D9D9D9] text-sm whitespace-pre-wrap font-sans bg-[#0A0A0A] p-4 rounded border border-[#222]">
