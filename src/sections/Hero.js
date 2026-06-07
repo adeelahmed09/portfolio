@@ -48,13 +48,13 @@ function Hero() {
           </p>
           <div className="reveal-item flex flex-wrap items-center gap-7 mt-[48px] animate-[fadeUp_0.9s_0.85s_forwards]">
             <Link
-              href="#"
+              href="/contact"
               className="inline-block bg-[#F9C02F] text-[#0A0A0A] font-sans text-[12px] font-semibold tracking-[0.14em] uppercase px-5 py-2 sm:px-9 sm:py-5 no-underline border-none cursor-pointer transition-all hover:opacity-80"
             >
               Let's Work Together
             </Link>
             <Link
-              href="#"
+              href="/projects"
               className="text-[0.78rem] tracking-[0.12em] uppercase text-[#717171] no-underline flex items-center gap-2 transition-colors hover:text-white"
             >
               View My Work
