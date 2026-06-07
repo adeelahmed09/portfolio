@@ -1,8 +1,42 @@
+"use client";
 import React from "react";
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
+gsap.registerPlugin(ScrollTrigger);
 function ContactUs() {
+  const containers = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".reveal-item",
+        {
+          opacity: 0,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: containers.current,
+            start: "top 80%", // animation starts when top of container reaches 80% of viewport
+            end: "top 50%",
+            toggleActions: "play none none none",
+            once: true, // play only once
+          },
+        },
+      );
+    },
+    { scope: containers },
+  );
   return (
-    <main className="w-full min-h-screen relative flex flex-col justify-center py-18 gap-10 items-center">
+    <main ref={containers} className="w-full min-h-screen relative flex flex-col justify-center py-18 gap-10 items-center">
       <div class="absolute inset-0 z-0 pointer-events-none bg-[size:60px_60px] bg-[linear-gradient(rgba(249,192,47,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(249,192,47,0.02)_1px,transparent_1px)]"></div>
       <div className="reveal-item flex justify-center will-change-transform will-change-opacity gap-3 uppercase text-xs w-fit items-center">
         <div className="w-8  h-[.5px] bg-[#F9C02F]"></div>
@@ -17,7 +51,7 @@ function ContactUs() {
         Whether you have a product in mind, need engineering support, or just
         want to say hi, I'm always open to discussing new opportunites
       </p>
-      <div class="relative w-full max-w-3xl mx-auto p-8 md:p-12 bg-[#070707] border border-[#f9c02f14] rounded-xl overflow-hidden shadow-2xl">
+      <div class="reveal-item  relative w-full max-w-3xl mx-auto p-8 md:p-12 bg-[#070707] border border-[#f9c02f14] rounded-xl overflow-hidden shadow-2xl">
         <div class="absolute top-0 right-0 w-48 h-48 bg-[#F9C02F]/10 rounded-full blur-[60px] pointer-events-none"></div>
 
         <form class="relative z-10 w-full space-y-8">
