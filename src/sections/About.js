@@ -34,7 +34,7 @@ useGSAP(() => {
   );
 }, { scope: containers });
   return (
-    <main id="about" ref={containers} className="w-full min-h-screen relative flex flex-col lg:flex-row justify-center py-16 md:py-24 gap-10 lg:gap-16 items-center scroll-mt-24">
+    <main id="about" ref={containers} className="w-full min-h-screen relative flex flex-col-reverse lg:flex-row justify-center py-16 md:py-24 gap-10 lg:gap-16 items-center scroll-mt-24">
       <div className="absolute inset-0 z-0 pointer-events-none bg-[size:60px_60px] bg-[linear-gradient(rgba(249,192,47,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(249,192,47,0.02)_1px,transparent_1px)]"></div>
       
       <div className="reveal-item border-[0.5px] border-[#f9c02f14] overflow-hidden rounded-2xl max-w-[280px] sm:max-w-[360px] lg:max-w-[450px] w-full shadow-2xl flex-shrink-0">
