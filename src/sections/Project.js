@@ -37,53 +37,62 @@ function Project() {
       { scope: containers },
     );
   return (
-    <main ref={containers} className="w-full min-h-screen relative flex flex-col py-18 gap-10 justify-center ">
-      <div class="absolute inset-0 z-0 pointer-events-none bg-[size:60px_60px] bg-[linear-gradient(rgba(249,192,47,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(249,192,47,0.02)_1px,transparent_1px)]"></div>
-      <h1 className="reveal-item text-4xl md:text-5xl mb-4 font-extrabold text-[#D9D9D9] ">
-        Project I've <span className="text-[#F9C02F] italic">Built</span>
+    <main id="work" ref={containers} className="w-full min-h-screen relative flex flex-col py-16 md:py-24 gap-10 justify-center scroll-mt-24">
+      <div className="absolute inset-0 z-0 pointer-events-none bg-[size:60px_60px] bg-[linear-gradient(rgba(249,192,47,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(249,192,47,0.02)_1px,transparent_1px)]"></div>
+      
+      <h1 className="reveal-item text-3xl sm:text-4xl md:text-5xl mb-4 font-extrabold text-[#D9D9D9]">
+        Projects I've <span className="text-[#F9C02F] italic">Built</span>
       </h1>
-      <div className="w-full max-h-[450px] h-[400px] flex gap-10 ">
-        <div className="reveal-item w-1/2 h-full  ">
+      
+      <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-stretch">
+        <div className="reveal-item w-full lg:w-1/2 h-[220px] sm:h-[320px] lg:h-[400px] relative rounded-2xl overflow-hidden shadow-2xl border border-[#f9c02f14]">
           <img
             src="/ygo-project.png"
-            className="w-full shadow-2xl h-full rounded-2xl overflow-hidden object-cover object-left  "
-            alt="project"
+            className="w-full h-full object-cover object-left"
+            alt="Ygo Cars project screen"
           />
         </div>
-        <div className="w-1/2  flex flex-col justify-center  h-full m">
-          <div className="reveal-item flex gap-5 uppercase items-center mb-4">
-            <div className="w-8  h-[.5px] bg-[#F9C02F]"></div>
-            <p className="text-[#F9C02F] tracking-widest">
-              Flagship Project * Car MarketPlace
+        
+        <div className="w-full lg:w-1/2 flex flex-col justify-center py-4">
+          <div className="reveal-item flex gap-4 uppercase items-center mb-4">
+            <div className="w-8 h-[.5px] bg-[#F9C02F]"></div>
+            <p className="text-[#F9C02F] tracking-widest text-xs">
+              Flagship Project * Car Marketplace
             </p>
           </div>
-          <h1 className="reveal-item text-3xl md:text-4xl mb-4 font-extrabold text-[#D9D9D9] ">
-            Ygo
-            <span className="text-[#F9C02F] italic">Cars</span>
+          
+          <h1 className="reveal-item text-3xl md:text-4xl mb-4 font-extrabold text-[#D9D9D9]">
+            Ygo <span className="text-[#F9C02F] italic">Cars</span>
           </h1>
-          <p className="reveal-item  text-xm font-light text-[#D9D9D9] w-[450px]">
-            A full-fledged car marketplace paltfom to buy, sell and rent
-            vehicles. Built for production-level system performance focusing on
-            scale, perfomance, and user experince.
+          
+          <p className="reveal-item text-sm sm:text-base font-light text-[#D9D9D9]/80 max-w-[480px] w-full leading-relaxed">
+            A full-fledged car marketplace platform to buy, sell, and rent
+            vehicles. Built for production-level system performance, focusing on
+            scale, performance, and user experience.
           </p>
-          <div className="mt-5 reveal-item">
-            <p className="text-[#F9C02F] tracking-widest">
-            Tech Stack
-          </p>
-          <ul className="flex gap-2 uppercase mt-1.5 text-xm  font-light text-[#D9D9D9]">
-            <li className="border-2 border-[#f9c02f14] px-1.5 py-0.5 rounded">Next Js</li>
-            <li className="border-2 border-[#f9c02f14] px-1.5 py-0.5 rounded">Node Js</li>
-            <li className="border-2 border-[#f9c02f14] px-1.5 py-0.5 rounded">Prisma ORM</li>
-            <li className="border-2 border-[#f9c02f14] px-1.5 py-0.5 rounded">PostgreSQL</li>
-          </ul>
+          
+          <div className="mt-6 reveal-item">
+            <p className="text-[#F9C02F] tracking-widest text-xs font-semibold mb-2">
+              Tech Stack
+            </p>
+            <ul className="flex flex-wrap gap-2 uppercase text-xs font-light text-[#D9D9D9]">
+              <li className="border border-[#f9c02f30] px-2.5 py-1 rounded bg-[#f9c02f05]">Next.js</li>
+              <li className="border border-[#f9c02f30] px-2.5 py-1 rounded bg-[#f9c02f05]">Node.js</li>
+              <li className="border border-[#f9c02f30] px-2.5 py-1 rounded bg-[#f9c02f05]">Prisma ORM</li>
+              <li className="border border-[#f9c02f30] px-2.5 py-1 rounded bg-[#f9c02f05]">PostgreSQL</li>
+            </ul>
           </div>
-          <div className="reveal-item mt-8 flex gap-1">
-            <a href={"https://ygocars.com"} className="text-[#F9C02F] tracking-widest">
-              VIWE THE PROJECT
+          
+          <div className="reveal-item mt-8 flex items-center gap-2">
+            <a 
+              href="https://ygocars.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-[#F9C02F] tracking-widest font-semibold hover:underline flex items-center gap-2 text-sm"
+            >
+              VIEW THE PROJECT
+              <span className="text-lg">→</span>
             </a>
-            <div className="flex text-[#F9C02F] item-center">
-              →
-            </div>
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${spaceGrotesk.variable} h-full antialiased`}
+      className={`${playfair.variable} ${spaceGrotesk.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full w-screen overflow-x-hidden flex flex-col bg-[#0a0a0a]">
         <Suspense fallback={<LoadingSuspense />}>
